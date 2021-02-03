@@ -17,6 +17,7 @@ class CustomVector
         std::ofstream _filePtr;                                 /* file ptr*/
         std::string _filePtrName;                               /*  file ptr name*/
         static int _id ;                                        /* store object count*/
+        bool _readState;
         void getFileName();                                     /* get unique file name for every new object created*/
         void saveFileName();                                    /* save name of file and object type for loading state */
         void writeToFile();                                     /* write vector to file for backup*/
@@ -57,6 +58,7 @@ class CustomVector
     	void popBack();											/* remove element from last*/
     	void insert(size_t idx, const dataType& val);					/* insert val at position idx*/
     	void erase(const size_t idx);							/* erase at idx*/
+        void changeReadState();                                     /* chnage read state of file*/
 };
 
-//#include "CustomVector.cpp"
+//#include "../CustomVector.cpp"

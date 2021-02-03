@@ -42,25 +42,26 @@ CustomVector<dataType>::CustomVector(const size_t sz, std::string str) : _size(s
 
 	_spinlock.lock();
 
-	if(str != ""){
+	if(str != "")
+	{
 		_data = new dataType[_capacity];
 		_filePtrName  = "";
-		_filePtrName += "new_";
 		_filePtrName += str;
 	}
 	// _size = sz;
  	// _capacity = sz;
- 	else{
-    _data = new dataType[_capacity];
+ 	else
+ 	{
+	    _data = new dataType[_capacity];
 
-    for(size_t i = 0; i < sz; ++i)
-        _data[i] = dataType();
+	    for(size_t i = 0; i < sz; ++i)
+	        _data[i] = dataType();
 
-	this->getFileName();
+		this->getFileName();
 
-    this->writeToFile();
+	    this->writeToFile();
 
-    this->saveFileName();
+	    this->saveFileName();
 }
 
     _spinlock.unlock();
@@ -516,6 +517,7 @@ void CustomVector<T>::erase(const size_t idx)
 		}
 
 		_size--;
+
 		this->writeToFile();
 
 		_spinlock.unlock();
@@ -554,16 +556,28 @@ void CustomVector<T>::saveFileName()
 template<class T>
 void CustomVector<T>::writeToFile()
 {
-	_filePtr.open(_filePtrName, std::ios::trunc | std::ios::binary);
-    if(!_filePtr.is_open())
-        {
-           std::cout<<"Error opening file"<<std::endl;
-        }
+	if(_readState == true)
+		return;
+	else
+	{
+		_filePtr.open(_filePtrName, std::ios::trunc | std::ios::binary);
+		if(!_filePtr.is_open())
+		{
+		   std::cout<<"Error opening file"<<std::endl;
+		}
 
-	for(size_t i = 0; i < _size; i++)
-        _filePtr<<_data[i]<<"\n";
-        //_filePtr.write((char *) &data[i], sizeof(T));
-    _filePtr.close();
+		for(size_t i = 0; i < _size; i++)
+		_filePtr<<_data[i]<<"\n";
+		//_filePtr.write((char *) &data[i], sizeof(T));
+		_filePtr.close();
+	}
+}
+
+template<class T>
+void CustomVector<T>::changeReadState()
+{	_spinlock.lock();
+		this->_readState = true;
+	_spinlock.unlock();
 }
 
 bool is_empty(std::ifstream& pFile)
@@ -600,6 +614,8 @@ int loadState(){
 												//create vector of type int
 				CustomVector<int> vecInt(0,str1.c_str());
    												// line is read stored correctly and you can use it
+				vecInt.changeReadState();
+
 				std::ifstream readDataFile;
 				readDataFile.open(str1.c_str()); 
 				
@@ -611,9 +627,9 @@ int loadState(){
     			std::string tempStr = "";
     			tempStr += "new_";
     			tempStr += str1;
-    			remove(str1.c_str());
-    			rename(tempStr.c_str(), str1.c_str());
-    			remove(tempStr.c_str());
+    			// remove(str1.c_str());
+    			// rename(tempStr.c_str(), str1.c_str());
+    			// remove(tempStr.c_str());
     			//std::cout<<str1<<std::endl;
     			//std::cout<<tempStr<<std::endl;
     				for(int i = 0; i < vecInt.size(); ++i)
