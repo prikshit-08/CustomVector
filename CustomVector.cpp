@@ -624,9 +624,9 @@ int loadState(){
     			{
         			vecInt.pushBack(element);
     			}
-    			std::string tempStr = "";
-    			tempStr += "new_";
-    			tempStr += str1;
+    			// std::string tempStr = "";
+    			// tempStr += "new_";
+    			// tempStr += str1;
     			// remove(str1.c_str());
     			// rename(tempStr.c_str(), str1.c_str());
     			// remove(tempStr.c_str());
@@ -650,6 +650,8 @@ int loadState(){
 												//create vector of type int
 				CustomVector<char> vecChar(0,str1.c_str());
    												// line is read stored correctly and you can use it
+				vecChar.changeReadState();
+
 				std::ifstream readDataFile;
 				readDataFile.open(str1.c_str()); 
 				
@@ -658,12 +660,12 @@ int loadState(){
     			{
         			vecChar.pushBack(element);
     			}
-    			std::string tempStr = "";
-    			tempStr += "new_";
-    			tempStr += str1;
-    			remove(str1.c_str());
-    			rename(tempStr.c_str(), str1.c_str());
-    			remove(tempStr.c_str());
+    			// std::string tempStr = "";
+    			// tempStr += "new_";
+    			// tempStr += str1;
+    			// remove(str1.c_str());
+    			// rename(tempStr.c_str(), str1.c_str());
+    			// remove(tempStr.c_str());
     			//std::cout<<str1<<std::endl;
     			//std::cout<<tempStr<<std::endl;
     				for(int i = 0; i < vecChar.size(); ++i)
@@ -684,6 +686,8 @@ int loadState(){
 												//create vector of type int
 				CustomVector<std::string> vecString(0,str1.c_str());
    												// line is read stored correctly and you can use it
+				vecString.changeReadState();
+
 				std::ifstream readDataFile;
 				readDataFile.open(str1.c_str()); 
 				
@@ -692,12 +696,12 @@ int loadState(){
     			{
         			vecString.pushBack(element);
     			}
-    			std::string tempStr = "";
-    			tempStr += "new_";
-    			tempStr += str1;
-    			remove(str1.c_str());
-    			rename(tempStr.c_str(), str1.c_str());
-    			remove(tempStr.c_str());
+    			// std::string tempStr = "";
+    			// tempStr += "new_";
+    			// tempStr += str1;
+    			// remove(str1.c_str());
+    			// rename(tempStr.c_str(), str1.c_str());
+    			// remove(tempStr.c_str());
     			//std::cout<<str1<<std::endl;
     			//std::cout<<tempStr<<std::endl;
     			for(int i = 0; i < vecString.size(); ++i)

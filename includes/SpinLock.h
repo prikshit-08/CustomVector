@@ -22,3 +22,6 @@ private:
  		_lock.store(false); 
  	}
 };
+
+/*for more info on spinlocks get ref from https://coffeebeforearch.github.io/2020/11/07/spinlocks-1.html*/
+

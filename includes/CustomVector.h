@@ -17,7 +17,7 @@ class CustomVector
         std::ofstream _filePtr;                                 /* file ptr*/
         std::string _filePtrName;                               /*  file ptr name*/
         static int _id ;                                        /* store object count*/
-        bool _readState;
+        bool _readState;					/* store state of filPtr whether reading or writing*/
         void getFileName();                                     /* get unique file name for every new object created*/
         void saveFileName();                                    /* save name of file and object type for loading state */
         void writeToFile();                                     /* write vector to file for backup*/
