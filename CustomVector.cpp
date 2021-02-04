@@ -741,6 +741,5 @@ int main()
 	// vec.erase(0);
 	// vec.erase(3);
 	//remove("MYFILE_2021-01-22_11-00-26.bin");
-	//std::cout<<vec1.front()<<std::endl;
 	}
 }
