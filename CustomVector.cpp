@@ -742,52 +742,5 @@ int main()
 	// vec.erase(3);
 	//remove("MYFILE_2021-01-22_11-00-26.bin");
 	//std::cout<<vec1.front()<<std::endl;
-	/*CustomVector<int> vec{1,2,3,4,5};
-	CustomVector<char> vec1{'a','b'};
-	CustomVector<int> vec2{1,2};
-//	std::cout<<vec2.size()<<std::endl;
-	std::cout<<"Size of vec 1: "<<vec.size()<<"\nSize of vec 2: "<<vec1.size()<<std::endl;
-	vec.pushBack(2);
-	std::cout<<"Last element of Vec: "<<vec.back()<<std::endl;
-	std::cout<<"Size of Vec: "<<vec.size()<<std::endl;
-	std::cout<<"Capacity of Vec: "<<vec.capacity()<<std::endl;
-	vec.resize(2);
-	std::cout<<"Size of Vec: "<<vec.size()<<std::endl;
-	std::cout<<"Elements of vec :";
-	for(size_t i = 0; i < vec.size(); ++i) 
-	{
-		std::cout<<vec[i]<<" ";
-	}
-	std::cout<<std::endl;
-	vec.resize(20,8);
-	std::cout<<"Elements of vec :";
-	for(size_t i = 0; i < vec.size(); ++i) 
-	{
-		std::cout<<vec[i]<<" ";
-	}
-	std::cout<<std::endl;
-	std::cout<<"Size of Vec: "<<vec.size()<<std::endl;
-	std::cout<<"Elements of vec :";
-	for(size_t i = 0; i < vec.size(); ++i) 
-	{
-		std::cout<<vec[i]<<" ";
-	}
-	std::cout<<std::endl;
-	vec.erase(1);
-	std::cout<<"Size of Vec: "<<vec.size()<<std::endl;
-	std::cout<<"Elements of vec :";
-	for(size_t i = 0; i < vec.size(); ++i) 
-	{
-		std::cout<<vec[i]<<" ";
-	}
-	std::cout<<std::endl;
-	vec.insert(3,2);
-	std::cout<<"Size of Vec: "<<vec.size()<<std::endl;
-	std::cout<<"Elements of vec :";
-	for(size_t i = 0; i < vec.size(); ++i) 
-	{
-		std::cout<<vec[i]<<" ";
-	}
-	std::cout<<std::endl;*/
 	}
 }
