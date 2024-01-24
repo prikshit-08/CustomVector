@@ -1,7 +1,6 @@
 #pragma once
 
 #include "SpinLock.h"
-#include <atomic>
 #include <cstring>
 #include <fstream>
 

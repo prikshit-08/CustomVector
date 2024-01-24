@@ -18,7 +18,7 @@ template <class dataType> int CustomVector<dataType>::_id = 0;
 // }
 
 // default vector
-/**template<class dataType>
+/* template<class dataType>
 CustomVector<dataType>::CustomVector() : _size(0), _capacity(0), _data(nullptr)
 {
         // _size = 0;
@@ -28,7 +28,7 @@ CustomVector<dataType>::CustomVector() : _size(0), _capacity(0), _data(nullptr)
         this->getFileName();
     this->writeToFile();
         this->saveFileName();
-}*/
+} */
 
 // vector with given size and default argument = 0
 template <class dataType>
@@ -596,60 +596,45 @@ int loadState() {
         // you are at end of the file and line is not read
         break;
       }
-    } else if (
-        str ==
-        "NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE") { /*
-                                                                         std::getline(readFile,
-                                                                     str1);
-                                                                     // read
-                                                                     file name
-                                                                         if(readFile.good())
-                                                                         {
-                                                                                                                                                 //create vector of type int
-                                                                                 CustomVector<std::string> vecString(0,str1.c_str());
-                                                                                                                                                 // line is read stored correctly and you can use it
-                                                                                 vecString.changeReadState();
+    } else if (str == "NSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE") {
+      /*
+       std::getline(readFile, str1);
+      // read file name
+      if (readFile.good()) {
+        // create vector of type int
+        CustomVector<std::string> vecString(0, str1.c_str());
+        // line is read stored correctly and you can use it
+        vecString.changeReadState();
 
-                                                                                 std::ifstream readDataFile;
-                                                                                 readDataFile.open(str1.c_str());
+        std::ifstream readDataFile;
+        readDataFile.open(str1.c_str());
 
-                                                                                 std::string element;
-                                                                         while(readDataFile
-                                                                     >> element)
-                                                                         {
-                                                                                 vecString.pushBack(element);
-                                                                         }
-                                                                         //
-                                                                     std::string
-                                                                     tempStr =
-                                                                     "";
-                                                                         //
-                                                                     tempStr +=
-                                                                     "new_";
-                                                                         //
-                                                                     tempStr +=
-                                                                     str1;
-                                                                         //
-                                                                     remove(str1.c_str());
-                                                                         //
-                                                                     rename(tempStr.c_str(),
-                                                                     str1.c_str());
-                                                                         //
-                                                                     remove(tempStr.c_str());
-                                                                         //std::cout<<str1<<std::endl;
-                                                                         //std::cout<<tempStr<<std::endl;
-                                                                         for(int
-                                                                     i = 0; i <
-                                                                     vecString.size();
-                                                                     ++i)
-                                                                                         std::cout<<vecString[i]<<" ";
-                                                                                 std::cout<<std::endl;
-                                                                         ++counter;
-                                                                         }
-                                                                         else{
-                                                                                                                                         // you are at end of the file and line is not read
-                                                                                  break;
-                                                                                 }*/
+        std::string element;
+        while (readDataFile >> element) {
+          vecString.pushBack(element);
+        }
+        //
+        std::string tempStr = "";
+        //
+        tempStr += "new_";
+        //
+        tempStr += str1;
+        //
+        remove(str1.c_str());
+        //
+        rename(tempStr.c_str(), str1.c_str());
+        //
+        remove(tempStr.c_str());
+        // std::cout<<str1<<std::endl;
+        // std::cout<<tempStr<<std::endl;
+        for (int i = 0; i < vecString.size(); ++i)
+          std::cout << vecString[i] << " ";
+        std::cout << std::endl;
+        ++counter;
+      } else {
+        // you are at end of the file and line is not read
+        break;
+      } */
     }
   }
   return counter;
